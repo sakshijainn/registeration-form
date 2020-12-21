@@ -10,19 +10,21 @@ const port = process.env.PORT || 3000;
 const static_path = path.join(__dirname ,  "../public");
 // console.log(path.join(__dirname ,  "../public"));
 
-const template_path = path.join(__dirname ,  "../template/views");
-const partials_path = path.join(__dirname ,  "../template/partials");
+const template_path = path.join(__dirname ,  "../templates/views");
+const partials_path = path.join(__dirname ,  "../templates/partials/");
+// console.log(path.join(__dirname ,  "../templates/views"));
 
 
 app.use(express.static(static_path));
-app.set("view engine" , "hbs");
+app.set('view engine' , 'hbs');
 app.set("views", template_path);
+
 hbs.registerPartials(partials_path);
 
 
-app.get("/",(req,res)=>{
+app.get("/",(request,response)=>{
     // res.send("Welcome to Olaacademy Institution ");
-    res.render("index")
+    response.render("index");
     // res.render("index");
 });
 
