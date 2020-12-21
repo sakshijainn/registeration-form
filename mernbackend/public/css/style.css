@@ -150,3 +150,47 @@
         font-weight: bold;
         color: blue;
     }
+
+    
+.image-container
+{
+    padding:2rem;
+   
+}
+
+.image-container .image 
+{
+    max-width: 550px;
+    display: block;
+   margin: auto;
+}
+
+
+.one 
+{
+    
+    padding:2rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+.text h1 
+{
+    letter-spacing: 2px;
+    font-size: 2rem;
+}
+
+.two
+{
+    text-align: center;
+}
+.two a  , .btn1 
+{
+    background-color: black;
+    padding:1rem;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+

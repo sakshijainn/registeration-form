@@ -24,10 +24,14 @@
      
       
       <div class="login-form">
-          <input type="text" placeholder="Email or Username" class="input"><br />
-          <input type="password" placeholder="Password" class="input"><br />
+         <form action="/login" method="POST">
+          <input type="text" placeholder="Email" class="input" name="email"><br />
+          
+          <input type="password" placeholder="Password" class="input" name="password"><br />
+           <input type="password" placeholder="Password" class="input" name="confirmpassword"><br />
           <div class="btn">log in</div>
           <span><a href="#">I forgot my username or password.</a></span>
+          </form>
        </div>
       
     </div>

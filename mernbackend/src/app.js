@@ -38,13 +38,45 @@ app.get('/register', (request,response)=>
     response.render("register");
 })
 
+app.get('/welcome', (request,response)=>
+{
+    response.render("welcome");
+})
+
+
 
 app.post('/register', async(request,response)=>
 {
     try
     {
+        // console.log(request.body.firstname);
+        // response.send(request.body.firstname);
+        const password = request.body.password;
+        const cpassword  = request.body.confirmpassword;
         console.log(request.body.firstname);
-        response.send(request.body.firstname);
+        console.log(request.body.gender);
+
+        if(password === cpassword)
+        {
+
+            const registerEmployee = new Register({
+                firstname :request.body.firstname,
+                email:request.body.email,
+                gender:request.body.gender,
+                birthday:request.body.birthday,
+                password:request.body.password,
+                confirmpassword:request.body.confirmpassword
+            })
+           const registered= await registerEmployee.save();
+           response.status(201).render("welcome");
+
+        }
+        else
+        {
+            response.send(`pwd not matching`);
+        }
+
+
 
     }
     catch (error)
@@ -55,6 +87,46 @@ app.post('/register', async(request,response)=>
 
 app.get("/login" ,(request,response)=>{
     response.render("login");
+})
+
+app.post('/login', async(request,response)=>
+{
+    try
+    {
+        // console.log(request.body.firstname);
+        // response.send(request.body.firstname);
+        const password = request.body.password;
+        const cpassword  = request.body.confirmpassword;
+
+        if(password === cpassword)
+        {
+
+            const registerEmployee = new Register({
+                firstname :request.body.firstname,
+                email:request.body.email,
+                gender:request.body.gender,
+                birthday:request.body.birthday,
+                password:request.body.password,
+                confirmpassword:request.body.confirmpassword
+            })
+           const registered= await registerEmployee.save();
+           response.status(201).render("index");
+           console.log(request.body.firstname);
+           console.log(request.body.gender);
+
+        }
+        else
+        {
+            response.send(`pwd not matching`);
+        }
+
+
+
+    }
+    catch (error)
+    {
+        response.status(400).send(error);
+    }
 })
 
 
