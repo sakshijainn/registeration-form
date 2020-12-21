@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+html
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+ 
+   
+   
+}
+
+
+body
+{
+    
+   margin: 0;
+   padding: 0;
+   background-color:white;
+   font-family: 'Montserrat', sans-serif;
+   max-width: 100%;
+  
+   
+   
+}
+
+
+.navigation
+{
+    padding-top: 2rem;
+    color:white;
+    letter-spacing: 1px;
+    background-color: #BE185D;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 1rem;
+    text-align: center;
+    padding: 1rem;
+    min-width: 100%;
+    font-size: 1rem;
+   
+}
